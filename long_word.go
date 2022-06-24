@@ -10,7 +10,6 @@ func main() {
 	for i := 0; i < n; i++ {
 		fmt.Scanln(&names[i])
 	}
-	//for _, str := range names {
 	for i := 0; i < n; i++ {
 		if len(names[i]) > 10 && len(names[i]) < 100 {
 			fmt.Printf("INVALID")
