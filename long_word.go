@@ -12,7 +12,8 @@ func main() {
 	}
 	for i := 0; i < n; i++ {
 		if len(names[i]) > 10 && len(names[i]) < 100 {
-			fmt.Printf("INVALID")
+			long_word := names[i:1]
+			fmt.Println(long_word)
 		} else {
 			fmt.Printf("%s\n", names[i])
 		}
