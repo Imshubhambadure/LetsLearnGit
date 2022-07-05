@@ -2,23 +2,25 @@ package main
 
 import (
 	"fmt"
+	"sort"
+	"strings"
 )
 
 func main() {
-	var a [100]string
+	var a string
 	fmt.Scan(&a)
-	//lth := len(a)
+	s := strings.Split(a, "")
+	nums := make([]string, 0)
 	for i := 0; i < len(a); i++ {
-		for j := 0; j < len(a)-i; j++ {
-			if a[j] != "+" {
-				if a[j] > a[j+2] {
-					var temp string
-					temp = a[j]
-					a[j] = a[j+2]
-					a[j+2] = temp
-				}
-			}
+		if s[i] != "+" {
+			nums = append(nums, s[i])
 		}
 	}
-	fmt.Printf("%s", a)
+	sort.Strings(nums)
+	for i := 0; i < len(nums); i++ {
+		fmt.Printf("%s", nums[i])
+		if i < len(nums)-1 {
+			fmt.Print("+")
+		}
+	}
 }
